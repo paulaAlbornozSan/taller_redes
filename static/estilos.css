@@ -1,0 +1,198 @@
+:root {
+    --bg-color: #eef2f5;
+    --card-bg: #ffffff;
+    --primary-color: #1e3a8a;
+    --secondary-color: #475569;
+    --success-color: #16a34a;
+    --danger-color: #dc2626;
+    --text-color: #1f2937;
+    --border-color: #e2e8f0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 24px;
+}
+
+.container {
+    max-width: 1050px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 24px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    margin: 0 0 8px 0;
+    font-size: 1.8rem;
+}
+
+.header p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card h3 {
+    margin: 0 0 8px 0;
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+}
+
+.metric {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.panel {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.panel h2 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 8px;
+}
+
+.server-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.server-table th, .server-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.server-table th {
+    background-color: #f8fafc;
+    font-weight: 600;
+}
+
+.badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    display: inline-block;
+}
+
+.badge-active { background-color: var(--success-color); }
+.badge-inactive { background-color: var(--danger-color); }
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-primary { background-color: var(--primary-color); color: white; }
+.btn-primary:hover { background-color: #1d4ed8; }
+
+.btn-secondary { background-color: var(--secondary-color); color: white; }
+.btn-secondary:hover { background-color: #334155; }
+
+.btn-small { padding: 4px 10px; font-size: 0.8rem; }
+.btn-toggle { background-color: #e2e8f0; color: #334155; }
+.btn-toggle:hover { background-color: #cbd5e1; }
+
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.result-box {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f1f5f9;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 6px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 15px;
+}
+
+.stat-card {
+    background-color: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 14px;
+}
+
+.stat-card-title {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.progress-bar-bg {
+    background-color: #e2e8f0;
+    border-radius: 4px;
+    height: 10px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.progress-bar-fill {
+    background-color: var(--primary-color);
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.message-panel {
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.message-error { background-color: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+.message-info { background-color: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+
+.hidden { display: none; }
+.text-center { text-align: center; }

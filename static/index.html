@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración de Servidores Dinámicos</title>
+    <link rel="stylesheet" href="/static/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 1. Encabezado -->
+        <header class="header">
+            <h1>Panel de Administración de Servidores Dinámicos</h1>
+            <p>Sistema de monitoreo, distribución de carga e inspección de peticiones en tiempo real.</p>
+        </header>
+
+        <!-- Áreas de Notificaciones y Errores del Sistema -->
+        <div id="system-messages" class="message-panel hidden"></div>
+
+        <!-- 2. Resumen del Sistema -->
+        <section class="summary-grid">
+            <div class="card">
+                <h3>Total Solicitudes Atendidas</h3>
+                <p id="total-requests" class="metric">0</p>
+            </div>
+            <div class="card">
+                <h3>Servidores Registrados</h3>
+                <p id="total-servers" class="metric">0</p>
+            </div>
+        </section>
+
+        <!-- 3. Listado y Control de Servidores -->
+        <section class="panel">
+            <div class="panel-header">
+                <h2>Servidores Registrados</h2>
+                <button id="btn-refresh-servers" class="btn btn-secondary">Actualizar Lista</button>
+            </div>
+            <table class="server-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Puerto</th>
+                        <th>Estado</th>
+                        <th>Simulación (Pruebas)</th>
+                    </tr>
+                </thead>
+                <tbody id="servers-tbody">
+                    <tr>
+                        <td colspan="4" class="text-center">Cargando servidores...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 4. Gestión de Solicitudes -->
+        <section class="panel">
+            <h2>Gestión de Solicitudes</h2>
+            <div class="request-actions">
+                <button id="btn-send-request" class="btn btn-primary">Enviar solicitud</button>
+            </div>
+            <div id="request-result-box" class="result-box hidden">
+                <p><strong>Servidor Asignado:</strong> <span id="res-server-name">-</span></p>
+                <p><strong>Respuesta de la API:</strong> <span id="res-server-output">-</span></p>
+            </div>
+        </section>
+
+        <!-- 5. Estadísticas de Distribución -->
+        <section class="panel">
+            <h2>Estadísticas de Procesamiento por Servidor</h2>
+            <div id="stats-container" class="stats-grid">
+                <p class="text-center">Cargando estadísticas...</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
